@@ -4,14 +4,10 @@ from .views import home
 from django.conf import settings
 from django.conf.urls.static import static
 
-static_urlpatterns = [
-    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
-    re_path(r"^assets/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
-]
-
 urlpatterns = [
     path('', home, name='dashboard'),
-    path("", include(static_urlpatterns))
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    re_path(r"^assets/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
 ]
 
 if settings.DEBUG:

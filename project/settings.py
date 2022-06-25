@@ -23,10 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-    DEBUG = os.environ.get('DEBUG_LOCAL')
-else:
-    DEBUG = os.environ.get('DEBUG_PROD')
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'devsolutions.atthost24.pl']
 
