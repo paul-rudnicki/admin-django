@@ -13,30 +13,24 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import sys
-import environ
+from dotenv import load_dotenv
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
-    DEBUG = env('DEBUG_LOCAL')
+    DEBUG = os.environ.get('DEBUG_LOCAL')
 else:
-    DEBUG = env('DEBUG_PROD')
+    DEBUG = os.environ.get('DEBUG_PROD')
 
 ALLOWED_HOSTS = []
 
@@ -103,7 +97,7 @@ else:
             'ENGINE': 'django.db.backends.mysql',
             'NAME': '23114_admindjango',
             'USER': '23114_admindjango',
-            'PASSWORD': env('DATABASE_URL_PASSWORD'),
+            'PASSWORD': os.environ.get('DATABASE_URL_PASSWORD'),
             'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
             'PORT': '3306',
          }
