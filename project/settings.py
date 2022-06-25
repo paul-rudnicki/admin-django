@@ -32,9 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # else:
 #     DEBUG = os.environ.get('DEBUG_PROD')
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['devsolutions.atthost24.pl', 'localhost:8000']
+ALLOWED_HOSTS = ['127.0.0.1', 'devsolutions.atthost24.pl']
 
 
 # Application definition
