@@ -140,7 +140,7 @@ USE_TZ = False
 STATIC_URL = '/assets/'
 STATIC_ROOT = BASE_DIR / 'assets/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'dashboard/assets/')]
+STATICFILES_DIRS = [BASE_DIR / 'dashboard/assets/']
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'dashboard/media/'
