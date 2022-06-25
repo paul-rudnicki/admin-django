@@ -32,7 +32,7 @@ if (len(sys.argv) >= 2 and sys.argv[1] == 'runserver'):
 else:
     DEBUG = os.environ.get('DEBUG_PROD')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['devsolutions.atthost24.pl', 'localhost:8000']
 
 
 # Application definition
