@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'devsolutions.atthost24.pl']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,6 +132,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/assets/'
+# STATIC_ROOT = str(BASE_DIR / 'assets/')
 STATIC_ROOT = str(BASE_DIR / 'assets/')
 
 STATICFILES_DIRS = [str(BASE_DIR / 'dashboard/assets/')]
@@ -145,6 +148,4 @@ LOGOUT_URL = 'logout'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 

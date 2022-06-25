@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 sys.path.append(os.getcwd())
 os.environ['DJANGO_SETTINGS_MODULE'] = "project.settings"
 from django.core.wsgi import get_wsgi_application
