@@ -133,7 +133,7 @@ USE_TZ = False
 
 STATIC_URL = '/assets/'
 # STATIC_ROOT = str(BASE_DIR / 'assets/')
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
 STATICFILES_DIRS = [str(BASE_DIR / 'dashboard/assets/')]
 
