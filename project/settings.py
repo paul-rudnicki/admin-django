@@ -138,12 +138,12 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/assets/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets/')
+STATIC_ROOT = BASE_DIR / 'assets/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'dashboard/assets/')]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'dashboard/media/')
+MEDIA_ROOT = BASE_DIR / 'dashboard/media/'
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
